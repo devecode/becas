@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <form method="POST" enctype="multipart/form-data">
+
+      <div class="card">
+        <div class="card-header">
+          <strong>Llenar</strong> Solicitud
+        </div>
+        <div class="card-body card-block">
+                {% csrf_token %}
+                {{ form.as_p  }}
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> Guardar
+          </button>
+          <button type="reset" class="btn btn-danger btn-sm">
+            <a href="{% url 'solicitudes:beca_list' %}"><i class="fa fa-ban"></i> Cancelar</a>
+          </button>
+        </div>
+      </div>
+
+
+    </form>
+{% endblock page_content %}

@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block side_bar %}{% endblock %}
+{% block top_bar %}{% endblock %}
+{% block page_content %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block login %}
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-form">
+                  <form class="user" method="POST">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control form-control-user" id="id_username" name="username" aria-describedby="emailHelp" placeholder="Usuario">
+                        </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control form-control-user" id="id_password" name="password" placeholder="Contraseña">
+                        </div>
+                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Acceder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
