@@ -33,7 +33,10 @@
 
     <link rel="stylesheet" href="{% static 'base/assets/css/style.css' %}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -112,7 +115,7 @@
 
 
 {% block page_content %}
-
+        
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -151,13 +154,14 @@
   {% block login %} {% endblock %}
     <!-- Right Panel -->
 
-
+ 
       <script src="{% static 'base/vendors/jquery/dist/jquery.min.js' %}"></script>
       <script src="{% static 'base/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
       <script src="{% static 'base/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
       <script src="{% static 'base/assets/js/main.js' %}"></script>
 
-
+      
+      <script src="{% static 'base/assets/js/init-scripts/chart-js/chartjs-init.js' %}"></script>  
       <script src="{% static 'base/vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
       <script src="{% static 'base/assets/js/dashboard.js' %}"></script>
       <script src="{% static 'base/assets/js/widgets.js' %}"></script>
@@ -176,8 +180,7 @@
       <script src="{% static 'base/vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
       <script src="{% static 'base/vendors/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
       <script src="{% static 'base/assets/js/init-scripts/data-table/datatables-init.js' %}"></script>
-
-    {% block js_page %} {% endblock %}
+{% block js_page %}{% endblock %}
 </body>
 
 </html>
