@@ -3,23 +3,28 @@
     
 <script>
 $(document).ready(function(){
-    var ctx = document.getElementById( "polarChart" );
-    ctx.height = 150;
+    var ctx = document.getElementById( "pieChart" );
+    ctx.height = 100;
     var myChart = new Chart( ctx, {
-        type: 'polarArea',
+        type: 'pie',
         data: {
             datasets: [ {
-                data: ['{{becas}}', '{{b}}', '{{n}}'],
+                data: [ '{{becas}}', '{{b}}', '{{n}}'],
                 backgroundColor: [
-                                    "rgba(0, 123, 255,0.9)",
-                                    "rgba(0, 123, 255,0.8)",
-                                    "rgba(0, 123, 255,0.7)",
-                                    "rgba(0,0,0,0.2)",
-                                    "rgba(0, 123, 255,0.5)"
+                                    "rgba(255,0,0,0.3)",
+                                    "rgba(0,255,0,0.3)",
+                                    "rgba(255,255,0,0.3)",
+                                    "rgba(192,192,192,0.3)"
+                                ],
+                hoverBackgroundColor: [
+                                    "rgba(255,0,0,0.3)",
+                                    "rgba(0,255,0,0.3)",
+                                    "rgba(255,255,0,0.3)",
+                                    "rgba(192,192,192,0.3)"
                                 ]
 
                             } ],
-            labels: ['Becas Totales', 'Becas Entregadas', 'Becas No Entregadas'  ]
+            labels: ['Total de Registros', 'Becas Entregadas', 'Becas No Entregadas' ]
         },
         options: {
             responsive: true
@@ -67,7 +72,7 @@ $(document).ready(function(){
     
     
                
-            <canvas id="polarChart"></canvas>
+            <canvas id="pieChart"></canvas>
            
 
 {% endblock %}
